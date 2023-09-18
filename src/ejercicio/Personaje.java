@@ -8,28 +8,17 @@ public class Personaje {
 	// Atributos
 
 	private String nombre;
-	private int puntosVida;
-	private int puntosConseguidos;
-	private String[] mochila;
-	private int numeroItems;
+	private int puntosVida=100;
+	private int puntosConseguidos=0;
+	private int numeroItems=10;
+	private String[] mochila = {"Vacio","Vacio","Vacio","Vacio","BOTIQUIN","Vacio","Vacio","Vacio","Vacio","Vacio"};
+	private int puntosFuerza=1;
 
 	// Constructores
-	public Personaje(String nombre, int puntosVida, int puntosConseguidos, String[] mochila, int numeroItems) {
-		super();
-		this.nombre = nombre;
-		this.puntosVida = 100;
-		this.puntosConseguidos = 0;
-		this.mochila = mochila;
-		this.numeroItems = 0;
-	}
 
 	public Personaje() {
-		this.puntosVida = 100;
 	}
-
 	public Personaje(String nombre) {
-		this.puntosVida = 100;
-		this.puntosConseguidos = 0;
 		this.nombre = nombre;
 	}
 
@@ -140,12 +129,21 @@ public class Personaje {
 		System.out.println("Estas eliminado");
 	}
 	
-	/*Método botiquin*/
+	/*Método botiquin
+	 * 
+	 * 
+	 * El metodo del botiquin se encarga de
+	 * buscar en el array un elemento que contenga el nombre
+	 * de BOTOQUIN, si lo encuentra aplica diez de salud
+	 * , sino no aplica salud
+	 * 
+	 * 
+	 * */
 	
 	public String buscarBotiquin() {
 		String botiquin="BOTIQUIN";
-		for (int i = 0; i < mochila.length;) {
-			if(mochila[i].equalsIgnoreCase(botiquin)) {
+		for (String element : mochila) {
+			if(element.equalsIgnoreCase(botiquin)) {
 				if(puntosVida==100) {
 					return "Vida al máximo";
 				}else {
@@ -157,5 +155,13 @@ public class Personaje {
 			}
 		}
 		return "Dispone de" + puntosVida;
+	}
+
+	public int getPuntosFuerza() {
+		return puntosFuerza;
+	}
+
+	public void setPuntosFuerza(int puntosFuerza) {
+		this.puntosFuerza = puntosFuerza;
 	}
 }
