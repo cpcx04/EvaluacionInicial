@@ -24,17 +24,16 @@ public class Batalla {
 				int i = ganador.getPuntosFuerza();
 				i = i + 1;
 				ganador.setPuntosFuerza(i);
-				if(ganador.getPuntosFuerza()==10) 
+				if (ganador.getPuntosFuerza() == 10)
 					System.out.println("Limite de Fuerza alcanzando, fin de la batalla");
 			} else if (p2.getPuntosVida() == 0) {
 				ganador = p1;
 				int i = ganador.getPuntosFuerza();
 				i = i + 1;
-				if(ganador.getPuntosFuerza()==10) 
+				if (ganador.getPuntosFuerza() == 10)
 					System.out.println("Limite de Fuerza alcanzando, fin de la batalla");
 			}
 		}
 	}
-
 
 }
